@@ -1,0 +1,16 @@
+/* general styling */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+/* div container */
+
+.container {
+    height: 50vh;
+    background-color: #fafafa
+}
