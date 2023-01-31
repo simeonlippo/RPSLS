@@ -1,13 +1,14 @@
 const choices = {
-    rock: { beats: ['lizard', 'scissors']},
-    paper: { beats: ['rock', 'spock']},
-    scissors: { beats: ['paper', 'lizard']},
-    lizard: { beats: ['spock', 'paper']},
-    spock: { beats: ['rock', 'scissors']},
+    rock: { beats: ['lizard', 'scissors'] },
+    paper: { beats: ['rock', 'spock'] },
+    scissors: { beats: ['paper', 'lizard'] },
+    lizard: { beats: ['spock', 'paper'] },
+    spock: { beats: ['rock', 'scissors'] },
 }
 
 const result = document.getElementById('result')
 const buttons = document.querySelectorAll('#choices button')
+const playAgainButton = document.getElementById("play-again-button")
 
 let playerScore = 0
 let computerScore = 0
@@ -20,16 +21,16 @@ function playGame(e) {
     if (playerScore >= 5 || computerScore >= 5) {
         return
     }
-    const playerSelection = e.targetId
+    const playerSelection = e.target.id
     const computerSelection = randomSelection()
     const winner = getWinner(playerSelection, computerSelection)
-    displayResult (winner, playerSelection, computerSelection)
+    displayResult(winner, playerSelection, computerSelection)
     updateScore(winner)
 }
 
 function randomSelection() {
-    const selection = Object.keys(choices)
-    return selections[Math.floor(Math.random() * selection.length)]
+    const selections = Object.keys(choices)
+    return selections[Math.floor(Math.random() * selections.length)]
 }
 
 function getWinner(playerSelection, computerSelection) {
@@ -42,9 +43,9 @@ function getWinner(playerSelection, computerSelection) {
     }
 }
 
-function displayResult (winner, playerSelection, computerSelection) {
+function displayResult(winner, playerSelection, computerSelection) {
     if (winner === 'tie') {
-        result.innerHTML = `it's a tie, you both selected ${playerSelection}.`
+        result.innerHTML = `It's a tie! You both selected ${playerSelection}.`
     } else if (winner === 'player') {
         result.innerHTML = `You Win! ${playerSelection} beats ${computerSelection}.`
     } else {
@@ -74,21 +75,20 @@ function updateComputerScore() {
 
 // Call the updatePlayerScore() or updateComputerScore() function depending on the outcome of the game //
 
+// Check win and reset game //
 function updateScore(winner) {
     if (winner === 'player') {
         updatePlayerScore()
     } else if (winner === 'computer') {
-        updateComputerScore
+        updateComputerScore()
     }
+    checkWin()
 }
 
-// Check win and reset game //
-
 function checkWin() {
-    if (playerScore === 5) {
-        result.innerHTML = "You win! You reached 5 points first."
+    if (playerScore === 5 || computerScore === 5) {
         playAgainButton.style.display = "block"
-        playAgainButton.addEventListener('click', resetGame)
+        playAgainButton.addEventListener("click", resetGame)
     }
 }
 
@@ -100,18 +100,3 @@ function resetGame() {
     playAgainButton.style.display = "none"
 }
 
-function updateScore(winner) {
-    if (winner === 'player') {
-        updatePlayerScore()
-    } else if (winner === 'computer') {
-        updateComputerScore
-    }
-    checkWin()
-}
-
-function checkWin() {
-    if (playerScore === 5 || computerScore === 5) {
-        playAgainButton.style.display = "block"
-        playAgainButton.addEventListener = ("click", resetGame)
-    }
-}
