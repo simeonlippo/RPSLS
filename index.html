@@ -9,17 +9,22 @@
         <header>
             <h1>Rock, Paper, Scissor, Lizard, Spock</h1>
         </header>
+    <!-- Scoreboard -->    
+    <div id="screen-container">
+        <div id="scoreboard">
+            <div id="player-score" class="screen">Player: <span id="player-score-number">0</span></div>
+            <div id="computer-score" class="screen">Computer: <span id="computer-score-number">0</span></div>
+        </div>
+
+        <!-- results -->
+        <div id="result">Results: <!-- change results through js --></div>
+
+        <!-- play again button -->
+        <button id="play-again-button" style="display: none;">Play Again</button>
+    </div>
+
         <!-- div container -->
         <div class="container">
-            <!-- Scoreboard -->
-            <div id="scoreboard">
-                <div id="player-score" class="screen">Player: <!-- add score through js --></div>
-                <div id="computer-score" class="screen">Computer: <!-- add score through js --></div>
-            </div>
-            <!-- results -->
-            <div id="result">Results: <!-- change results through js --></div>
-            <!-- play again button -->
-            <button id="play-again" style="display: none;">Play Again</button>
             <!-- Buttons for choices -->
             <div id="choices">
                 <button>Rock<!-- add <img> instead of text --></button>
