@@ -100,3 +100,30 @@ header {
     margin-right: 100px;
     margin-bottom: 100px;
 }
+
+/* media queries for small screens */
+
+@media (max-width: 800px) {
+    #choices button {
+        width: 80px;
+        height: 80px;
+        font-size: 18px;
+    }
+
+    .screen {
+        width: 250px;
+        height: 80px;
+        font-size: 28px;
+    }
+
+    #rpsls-section {
+        display: flex;
+    }
+
+    #rpsls-img {
+        width: 100%;
+        height: auto;
+        scale: 0.5;
+    }
+    
+}
