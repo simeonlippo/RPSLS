@@ -87,13 +87,16 @@ header {
     background-color: #dfdddd;
 }
 
+/* rpsls section */
 
-/* color options based on palete from rpsls img */
+#rpsls-section {
+    display: flex;
+    justify-content: space-between;
+}
 
-h5 {
-color: #000000ff;
-color: #F65947ff;
-color: #E7856Dff;
-color: #F6CFBDff;
-color: #E2634Bff;
+#rpsls-img {
+    width: 30%;
+    height: auto;
+    margin-right: 100px;
+    margin-bottom: 100px;
 }
