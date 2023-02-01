@@ -1,9 +1,9 @@
 const choices = {
-    rock: { beats: ['lizard', 'scissors'] },
-    paper: { beats: ['rock', 'spock'] },
-    scissors: { beats: ['paper', 'lizard'] },
-    lizard: { beats: ['spock', 'paper'] },
-    spock: { beats: ['rock', 'scissors'] },
+    "rock": { beats: ['lizard', 'scissors'] },
+    "paper": { beats: ['rock', 'spock'] },
+    "scissors": { beats: ['paper', 'lizard'] },
+    "lizard": { beats: ['spock', 'paper'] },
+    "spock": { beats: ['rock', 'scissors'] },
 }
 
 const result = document.getElementById('result')
